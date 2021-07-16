@@ -2,7 +2,7 @@ let mymap = L.map("mapid")
 
 async function fetchData(ip) {
   const apiUrl = `https://geo.ipify.org/api/v1?`;
-  const apiKey = `at_FlNUZd8htagHp70zPRaP6G8Yoerxq`;
+  const apiKey = process.env.apiKey;
 
   const ipAddress = ip ? ip : "";
 
