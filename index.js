@@ -1,6 +1,6 @@
 async function fetchIP(ip) {
   const apiUrl = `https://geo.ipify.org/api/v1?`;
-  const apiKey = process.ENV.APIKEY//`at_FlNUZd8htagHp70zPRaP6G8Yoerxq`;
+  const apiKey = `at_FlNUZd8htagHp70zPRaP6G8Yoerxq`;
 
   const ipAddress = ip ? ip : "";
   
