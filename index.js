@@ -21,7 +21,7 @@ async function fetchData(ip) {
 
   try {
 
-    const {apiKey} = netlifyEnvs()
+    const {apiKey} = await netlifyEnvs()
     const response = await fetch(
       `${apiUrl}apiKey=${apiKey}&domain=${ipAddress}`
     );
