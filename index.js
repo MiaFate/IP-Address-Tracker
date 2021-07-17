@@ -45,7 +45,7 @@ async function fetchData(ip) {
         id: "mapbox/streets-v11",
         tileSize: 512,
         zoomOffset: -1,
-        accessToken: accessToken,
+        accessToken: accessToken
       }
     ).addTo(mymap);
   } catch (error) {
