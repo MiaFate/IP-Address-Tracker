@@ -1,12 +1,27 @@
 let mymap = L.map("mapid")
 
+async function netlifyEnvs(){
+  try {
+    const response = await fetch("./netlify/functions/envsData")
+    const data = await response.json()
+    return data
+  } catch (error) {
+    console.log(error.message)
+  }
+  
+  }
+
 async function fetchData(ip) {
   const apiUrl = `https://geo.ipify.org/api/v1?`;
-  const apiKey = "./netlify/functions/envsData.js"
+  //const apiKey = "./netlify/functions/envsData.js"
+  
+
 
   const ipAddress = ip ? ip : "";
 
   try {
+
+    const {apiKey} = netlifyEnvs()
     const response = await fetch(
       `${apiUrl}apiKey=${apiKey}&domain=${ipAddress}`
     );
