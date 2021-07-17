@@ -1,29 +1,25 @@
-let mymap = L.map("mapid")
+let mymap = L.map("mapid");
 
-async function netlifyEnvs(){
+async function netlifyEnvs() {
   try {
-    const response = await fetch("/.netlify/functions/envsData")
-    const data = await response.json()
-    console.log(data)
-    return data
+    const response = await fetch("/.netlify/functions/envsData");
+    const data = await response.json();
+    console.log(data);
+    return data;
   } catch (error) {
-    console.log(error.message)
+    console.log(error.message);
   }
-  
-  }
+}
 
 async function fetchData(ip) {
   const apiUrl = `https://geo.ipify.org/api/v1?`;
   //const apiKey = "./netlify/functions/envsData.js"
-  
-
 
   const ipAddress = ip ? ip : "";
 
   try {
-
-    const envs = await netlifyEnvs()
-    const apiKey = envs.apiKey
+    const envs = await netlifyEnvs();
+    const { apiKey, accessToken } = envs;
     const response = await fetch(
       `${apiUrl}apiKey=${apiKey}&domain=${ipAddress}`
     );
@@ -49,7 +45,7 @@ async function fetchData(ip) {
         id: "mapbox/streets-v11",
         tileSize: 512,
         zoomOffset: -1,
-        accessToken: process.env.mapboxToken,
+        accessToken: accessToken,
       }
     ).addTo(mymap);
   } catch (error) {
