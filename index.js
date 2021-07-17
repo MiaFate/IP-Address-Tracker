@@ -2,7 +2,7 @@ let mymap = L.map("mapid")
 
 async function netlifyEnvs(){
   try {
-    const response = await fetch("./netlify/functions/envsData")
+    const response = await fetch("/.netlify/functions/envsData")
     const data = await response.json()
     return data
   } catch (error) {
