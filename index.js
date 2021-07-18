@@ -27,12 +27,12 @@ async function fetchData(ip) {
     const ip = data.ip;
     const { country, region, timezone, lat, lng } = data.location;
     const isp = data.isp;
-    document.getElementById("ip").textContent = `ip Address: ${ip}`;
+    document.getElementById("ip").textContent = `${ip}`;
     document.getElementById(
       "location"
-    ).textContent = `Location: ${country}, ${region}`;
-    document.getElementById("timezone").textContent = `Timezone: ${timezone}`;
-    document.getElementById("isp").textContent = `ISP: ${isp}`;
+    ).textContent = `${country}, ${region}`;
+    document.getElementById("timezone").textContent = `${timezone}`;
+    document.getElementById("isp").textContent = `${isp}`;
     mymap.setView([lat, lng], 13);
 
     L.tileLayer(
