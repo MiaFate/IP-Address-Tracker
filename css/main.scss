@@ -1,0 +1,79 @@
+:root {
+  --veryDarkGray: hsl(0, 0%, 17%);
+  --darkGray: hsl(0, 0%, 59%);
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+}
+#header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-weight: 500;
+    color: white;
+    font-size: 1.5rem;
+  }
+  input {
+    color: var(--veryDarkGray);
+    font-weight: 400;
+  }
+  input::placeholder {
+    color: var(--darkGray);
+    font-weight: 400;
+    opacity: 1;
+  }
+}
+.data{
+    background-color: white;
+    display: flex;    
+}
+#back {
+  position: absolute;
+  top: 0;
+  /*bottom: 0; */
+  display: flex;
+  flex-direction: column;
+  /* align-items: stretch; */
+  /* justify-content: center; */
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  /* min-height: 100vh; */
+  /* overflow:hidden; */
+  #container-img {
+    overflow: hidden;
+  }
+  &-img {
+    display: block;
+    height: 250px;
+    width: 1440px;
+  }
+
+  #mapid {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  font-size: 11px;
+  text-align: center;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
